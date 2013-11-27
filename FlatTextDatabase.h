@@ -20,6 +20,7 @@ public:
 	std::vector<order> searchDatabaseByOrderID(long orderID);
 	bool insertNewRecord(order*  o);
 	bool isOpen(){return m_isOpen;}
+    std::vector<order> getData() {return m_data;}
 private:
 	FlatTextDatabase();
 	static pthread_mutex_t m_mutex;

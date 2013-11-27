@@ -59,7 +59,7 @@ void FlatTextDatabase::readRecord(const std::string& filename)
 	{
 	    while ( getline (myfile,line) )
 	    {
-	      vector<string> splited = split(line, ',');
+	      vector<string> splited = split(line, ';');
 	      if(splited.size() < 3)
 	      {
 	      	continue;
@@ -97,7 +97,7 @@ bool FlatTextDatabase::insertNewRecord(order*  o)
 	m_data.push_back(*o);
 	ofstream myfile;
   	myfile.open (m_filename, ios::app);
-  	myfile << o->orderID <<"," << o->owner <<"," <<o->amount <<endl;
+  	myfile << o->orderID <<";" << o->owner <<";" <<o->amount <<endl;
   	myfile.close();
 
 	return true;

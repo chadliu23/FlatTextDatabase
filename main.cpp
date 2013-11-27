@@ -1,9 +1,10 @@
-#include "FlatTextDatabase.h"
-
-int main()
-{
-	FlatTextDatabase* database = FlatTextDatabase::getInstance();
-
-	database->releaseDatabase();
-	return 0;
+#include <QApplication>
+#include "FlatTextDatabaseViewer.h"
+ 
+int main(int argc, char *argv[])
+ {
+    QApplication app(argc, argv);
+    FlatTextDatabaseViewer viewer;
+    viewer.show();
+    return app.exec();
 }
